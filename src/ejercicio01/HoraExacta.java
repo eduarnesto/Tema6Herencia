@@ -1,5 +1,8 @@
 package ejercicio01;
 
+/**
+ * 
+ */
 public class HoraExacta extends Hora {
 	int segundo;
 
@@ -21,7 +24,7 @@ public class HoraExacta extends Hora {
 
 	public void inc() {
 		segundo++;
-		if (segundo >= 60) {
+		if (segundo == 60) {
 			segundo = 0;
 			super.inc();
 		}
@@ -29,7 +32,17 @@ public class HoraExacta extends Hora {
 
 	@Override
 	public String toString() {
-		return super.toString() + ":" + segundo;
+		String res = "";
+
+		res += super.toString();
+		
+		if (segundo < 10) {
+			res += "0";
+		}
+
+		res += ":" + segundo;
+
+		return res;
 	}
 
 }

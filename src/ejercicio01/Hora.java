@@ -1,6 +1,12 @@
 package ejercicio01;
 
+/**
+ * Clase para guardar toda la informacion relacionada con la hora
+ */
 public class Hora {
+	/**
+	 * Variable para guardar la 
+	 */
 	protected int hora;
 	protected int minuto;
 
@@ -18,7 +24,7 @@ public class Hora {
 
 	public void inc() {
 		this.minuto++;
-		if (minuto >= 60) {
+		if (minuto == 60) {
 			minuto = 0;
 			hora++;
 		}
@@ -46,7 +52,21 @@ public class Hora {
 
 	@Override
 	public String toString() {
-		return hora + ":" + minuto;
+		String res="";
+		
+		if (hora<10) {
+			res+="0";
+		}
+		
+		res += hora;
+		
+		if (minuto<10) {
+			res+="0";
+		}
+		
+		res += ":" + minuto;
+		
+		return res;
 	}
 
 }
