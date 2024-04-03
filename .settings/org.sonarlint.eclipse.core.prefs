@@ -1,4 +1,4 @@
 autoEnabled=true
 bindingSuggestionsDisabled=false
 eclipse.preferences.version=1
-fileExclusions=FILE\:src/ejercicio01/Hora.java\r\nFILE\:src/ejercicio01/Principal.java
+fileExclusions=FILE\:src/ejercicio01/Hora.java\r\nFILE\:src/ejercicio01/Principal.java\r\nFILE\:src/ejercicio02/Principal.java

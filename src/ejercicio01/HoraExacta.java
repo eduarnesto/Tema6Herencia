@@ -4,7 +4,7 @@ package ejercicio01;
  * 
  */
 public class HoraExacta extends Hora {
-	int segundo;
+	private int segundo;
 
 	public HoraExacta(int hora, int minuto, int segundo) {
 		super(hora, minuto);
