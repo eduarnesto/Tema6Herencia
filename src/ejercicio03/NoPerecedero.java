@@ -21,9 +21,5 @@ public class NoPerecedero extends Producto{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
-	@Override
-	public float calcular(int productos) {
-		return super.calcular(productos);
-	}
+
 }
