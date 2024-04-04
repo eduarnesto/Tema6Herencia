@@ -45,15 +45,15 @@ public class Electrodomestico {
 	}
 
 	public void setColor(String color) {
-		this.color = Colores.valueOf(color);
+		comprobarColor(color);
 	}
 
 	public Energia getEficienciaEnergetica() {
 		return eficienciaEnergetica;
 	}
 
-	public void setEficienciaEnergetica(String eficienciaEnergetica) {
-		this.eficienciaEnergetica = Energia.valueOf(eficienciaEnergetica);
+	public void setEficienciaEnergetica(char eficienciaEnergetica) {
+		comprobarConsumoEnergetico(eficienciaEnergetica);
 	}
 
 	public float getPeso() {
@@ -65,7 +65,7 @@ public class Electrodomestico {
 			this.peso = peso;
 		}
 	}
-	
+
 	private void comprobarConsumoEnergetico(char letra) {
 		if (letra == 'A' || letra == 'B' || letra == 'C' || letra == 'D' || letra == 'E' || letra == 'F') {
 			this.eficienciaEnergetica = Energia.valueOf(String.valueOf(letra));
@@ -75,11 +75,46 @@ public class Electrodomestico {
 	}
 
 	private void comprobarColor(String color) {
-		if (color.equals("rojo") || color.equals("blanco") || color.equals("azul") || color.equals("gris") || color.equals("negro")) {
-			this.color = Colores.valueOf(color.ign);
+		if (color.equals("rojo") || color.equals("blanco") || color.equals("azul") || color.equals("gris")
+				|| color.equals("negro")) {
+			this.color = Colores.valueOf(color);
 		} else {
-			this.color = ;
+			this.color = Colores.blanco;
 		}
 	}
-	
+
+	public void precioFinal() {
+		switch (this.eficienciaEnergetica) {
+		case A:
+			this.precioBase += 100;
+			break;
+		case B:
+			this.precioBase += 80;
+			break;
+		case C:
+			this.precioBase += 60;
+			break;
+		case D:
+			this.precioBase += 50;
+			break;
+		case E:
+			this.precioBase += 30;
+			break;
+		case F:
+			this.precioBase += 10;
+			break;
+		default:
+			break;
+		}
+
+		if (this.peso < 20) {
+			this.precioBase += 10;
+		} else if (this.peso < 50) {
+			this.precioBase += 50;
+		} else if (this.peso < 80) {
+			this.precioBase += 80;
+		} else {
+			this.precioBase += 100;
+		}
+	}
 }
