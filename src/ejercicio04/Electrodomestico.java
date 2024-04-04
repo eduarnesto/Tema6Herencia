@@ -74,11 +74,11 @@ public class Electrodomestico {
 		}
 	}
 
-	private void comprobarColor(char letra) {
-		if (letra == 'A' || letra == 'B' || letra == 'C' || letra == 'D' || letra == 'E' || letra == 'F') {
-			this.eficienciaEnergetica = Energia.valueOf(String.valueOf(letra));
+	private void comprobarColor(String color) {
+		if (color.equals("rojo") || color.equals("blanco") || color.equals("azul") || color.equals("gris") || color.equals("negro")) {
+			this.color = Colores.valueOf(color.ign);
 		} else {
-			this.eficienciaEnergetica = Energia.F;
+			this.color = ;
 		}
 	}
 	
