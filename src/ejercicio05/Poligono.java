@@ -17,8 +17,8 @@ public abstract class Poligono {
 	abstract double area();
 
 	public String toString() {
-		String res = "";
-		res += numeroLados;
+		String res = "Número de lados: ";
+		res += numeroLados + "\n";
 		return res;
 	}
 
